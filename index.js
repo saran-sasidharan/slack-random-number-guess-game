@@ -4,6 +4,9 @@ const axios = require("axios");
 
 const app = express();
 
+// middleware to parse body of request data as json
+app.use(express.json());
+
 const VALUES = [1, 2, 3];
 
 const db = {}
@@ -19,12 +22,10 @@ const http = axios.create({
   },
 });
 
-// middleware to parse body of request data as json
-app.use(express.json());
 
 app.post("/api/botgame", (req, res) => {
-  let payload = {...req.body};
-  console.log(payload.challenge)
+  const payload = req.body;
+  console.log(payload)
   res.status(200).send(payload.challenge);
   const channel = payload.event.item.channel;
 
