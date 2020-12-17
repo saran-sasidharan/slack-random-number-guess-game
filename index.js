@@ -7,6 +7,10 @@ const VALUES = [1, 2, 3];
 // middleware to parse body of request data as json
 app.use(express.json())
 
+app.post("/api/botgame", (req, res) => {
+    res.send("Success from server")
+})
+
 app.get("/api/courses", (req, res) => {
     res.send(VALUES)
 })
