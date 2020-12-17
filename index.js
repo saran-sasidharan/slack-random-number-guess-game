@@ -7,8 +7,10 @@ const VALUES = [1, 2, 3];
 // middleware to parse body of request data as json
 app.use(express.json())
 
+app.post("/api/", (req, res) => res.send(req.body.challenge))
+
 app.post("/api/botgame", (req, res) => {
-    res.send("Success from server")
+    res.send("Welcome to the Slack Bot Game, try and guess what number I am thinking of between 0 and 10")
 })
 
 app.get("/api/courses", (req, res) => {
