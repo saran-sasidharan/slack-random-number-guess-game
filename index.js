@@ -75,7 +75,7 @@ const chatPostMessage = async (text, channel) => {
   try {
     const response = await http.post(url, { text, channel });
     console.log(
-      `Succesfully posted message\n
+      `Succesfully posted message, status(${response.status})\n
       channel: ${channel}\n
       text: ${text}`
     );
