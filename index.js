@@ -25,7 +25,6 @@ const http = axios.create({
 
 app.post("/api/botgame", (req, res) => {
   const payload = req.body;
-  console.log(payload)
   res.status(200).send(payload.challenge);
   const channel = payload.event.channel;
 
