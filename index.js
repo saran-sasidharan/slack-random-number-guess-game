@@ -27,7 +27,7 @@ app.post("/api/botgame", (req, res) => {
   const payload = req.body;
   console.log(payload)
   res.status(200).send(payload.challenge);
-  const channel = payload.event.item.channel;
+  const channel = payload.event.channel;
 
   if (payload.event.type === "app_mention") {
     if (payload.event.text.includes("start")) {
