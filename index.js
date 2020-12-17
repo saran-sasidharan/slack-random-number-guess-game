@@ -49,6 +49,8 @@ app.post("/api/botgame", (req, res) => {
             tries = tries - 1;
             if (value === guess) {
                 chatPostMessage("Congratulations! You guessed the number I was thinking of!", channel)
+                guess = -1;
+                tries = 3;
                 return
             }
             if (tries === 0) {
