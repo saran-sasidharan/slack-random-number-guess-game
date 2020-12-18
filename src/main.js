@@ -30,7 +30,7 @@ app.command("/botgame", async ({ command, ack, say }) => {
   if (command.text.includes("start")) {
     startGame(command.user);
     await say(
-      `Hey there <@${event.user}>!\nWelcome to the Slack Bot Game, try and guess what number I am thinking of between 0 and 10`
+      `Hey there <@${command.user}>!\nWelcome to the Slack Bot Game, try and guess what number I am thinking of between 0 and 10`
     );
   }
 });
