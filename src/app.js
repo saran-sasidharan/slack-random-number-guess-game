@@ -8,6 +8,10 @@ const app = new App({
     logLevel
 });
 
+app.event("app_mention", async ({event, say}) => {
+    await say(`Hey there <@${event.user}>!`)
+})
+
 const run = async () => {
     const port = process.env.PORT || 3000;
     await app.start(port);
