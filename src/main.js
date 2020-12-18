@@ -17,7 +17,7 @@ app.event("app_mention", async ({ event, say }) => {
   );
 });
 
-app.message(/^[1-9]/, async ({ message, context, say }) => {
+app.message(/^ *[1-9] *$/, async ({ message, context, say }) => {
   if (!isPlayer(message.user)) {
     return;
   }
