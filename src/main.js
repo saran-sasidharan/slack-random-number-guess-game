@@ -25,6 +25,16 @@ app.message(/^ *[1-9] *$/, async ({ message, context, say }) => {
   await say(getUpdatedGameStatus(message.user, guess));
 });
 
+app.command("/botgame", async ({ command, ack, say }) => {
+  await ack();
+  if (command.text.includes("start")) {
+    startGame(command.user);
+    await say(
+      `Hey there <@${event.user}>!\nWelcome to the Slack Bot Game, try and guess what number I am thinking of between 0 and 10`
+    );
+  }
+});
+
 const run = async () => {
   const port = process.env.PORT || 3000;
   await app.start(port);
