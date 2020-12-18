@@ -4,18 +4,20 @@
   "description": "Random guess game for slack bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Saran Sasidharan",
   "license": "MIT",
   "dependencies": {
+    "@slack/bolt": "^2.5.0",
     "axios": "^0.21.0",
     "express": "^4.17.1",
     "joi": "^17.3.0"
   },
   "devDependencies": {
+    "ngrok": "^3.3.0",
     "nodemon": "^2.0.6"
   }
 }
