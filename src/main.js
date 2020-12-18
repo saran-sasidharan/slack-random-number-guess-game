@@ -28,10 +28,9 @@ app.message(/^ *[1-9] *$/, async ({ message, context, say }) => {
 app.command("/botgame", async ({ command, ack, say }) => {
   await ack();
   if (command.text.includes("start")) {
-    console.debug(command.user)
-    startGame(command.user);
+    startGame(command.user_id);
     await say(
-      `Hey there <@${command.user}>!\nWelcome to the Slack Bot Game, try and guess what number I am thinking of between 0 and 10`
+      `Hey there <@${command.user_id}>!\nWelcome to the Slack Bot Game, try and guess what number I am thinking of between 0 and 10`
     );
   }
 });
