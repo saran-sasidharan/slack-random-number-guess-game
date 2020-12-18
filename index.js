@@ -1,5 +1,5 @@
 const express = require("express");
-const Joi = require("joi");
+// const Joi = require("joi");
 const axios = require("axios");
 
 const app = express();
@@ -7,9 +7,9 @@ const app = express();
 // middleware to parse body of request data as json
 app.use(express.json());
 
-const VALUES = [1, 2, 3];
+// const VALUES = [1, 2, 3];
 
-const db = {}
+// const db = {}
 let guess = -1;
 let tries = 3;
 
@@ -91,21 +91,21 @@ const chatPostMessage = async (text, channel) => {
   }
 };
 
-app.get("/api/courses", (req, res) => {
-  res.send(VALUES);
-});
+// app.get("/api/courses", (req, res) => {
+//   res.send(VALUES);
+// });
 
-app.get("/api/courses/:id", (req, res) => {
-  const schema = Joi.object({
-    name: Joi.number().min(0).max(2).required(),
-  });
+// app.get("/api/courses/:id", (req, res) => {
+//   const schema = Joi.object({
+//     name: Joi.number().min(0).max(2).required(),
+//   });
 
-  const result = schema.validate({ name: parseInt(req.params.id) });
-  if (result.error) {
-    return res.status(400).send(result.error);
-  }
-  res.send(`${VALUES[req.params.id]}`);
-});
+//   const result = schema.validate({ name: parseInt(req.params.id) });
+//   if (result.error) {
+//     return res.status(400).send(result.error);
+//   }
+//   res.send(`${VALUES[req.params.id]}`);
+// });
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
