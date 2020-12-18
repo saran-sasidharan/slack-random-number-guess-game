@@ -5,7 +5,9 @@ describe("game logic testing", () => {
     const noOfTriesArray = [0, -1, -5];
     const randomGenerator = () => 1;
     noOfTriesArray.forEach((noOfTries) =>
-      expect(() => new RandomGuessGame(noOfTries, randomGenerator)).toThrow(Error)
+      expect(() => new RandomGuessGame(noOfTries, randomGenerator)).toThrow(
+        Error
+      )
     );
   });
 

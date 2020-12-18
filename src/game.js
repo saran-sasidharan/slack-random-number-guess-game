@@ -1,8 +1,7 @@
 class RandomGuessGame {
   constructor(noOfTries, randomNumberGenerator) {
-      //TODO: noOfTries cannot be less than 1
     if (noOfTries < 1) {
-        throw new Error("No of tries should be atleast 1")
+      throw new Error("No of tries should be atleast 1");
     }
     this.secret = randomNumberGenerator();
     this.status = {
