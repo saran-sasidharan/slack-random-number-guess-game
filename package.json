@@ -4,8 +4,8 @@
   "description": "Random guess game for slack bot",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js",
     "test": "jest"
   },
   "author": "Saran Sasidharan",
