@@ -68,4 +68,13 @@ describe("game logic testing", () => {
 
     expect(status.is_greater).toBe(false);
   });
+
+  test("secret getter gets current secret", () => {
+    const secret = 5;
+    const noOfTries = 1;
+
+    const game = new RandomGuessGame(noOfTries, () => secret)
+
+    expect(game.secret).toBe(secret)
+  })
 });
